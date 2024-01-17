@@ -13,6 +13,6 @@ const api = createApi({
 })
 
 
-export const{useGetProdutoQuery} = api
+export const {useGetProdutoQuery} = api
 
 export default api

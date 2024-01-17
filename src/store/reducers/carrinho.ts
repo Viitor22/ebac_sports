@@ -7,9 +7,8 @@ type carrinhoState = {
     itens: Produto[]
 }
 
-const initialState = {
-    itens: [],
-    favoritos: []
+const initialState: carrinhoState = {
+    itens: []
 }
 
 const carrinhoSlice = createSlice({
@@ -21,7 +20,7 @@ const carrinhoSlice = createSlice({
             if (state.itens.find((item) => item.id === produto.id)) {
                 alert('Item já adicionado')
             } else {
-                state.itens = [...state.item, produto]
+                state.itens = [...state.itens, produto]
             }
         }
     }

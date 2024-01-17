@@ -7,9 +7,8 @@ type favoritosState = {
     itens: Produto[]
 }
 
-const initialState = {
-    itens: [],
-    favoritos: []
+const initialState: favoritosState = {
+    itens: []
 }
 
 const favoritosSlice = createSlice({
@@ -17,11 +16,11 @@ const favoritosSlice = createSlice({
     initialState,
     reducers: {
         favoritar: (state, action: PayloadAction<Produto>) => {
-            const produto = action.payload
-            if (state.itens.find((f) => f.id === produto.id)) {
-                state.itens = state.itens.filter((f) => f.id !== produto.id)
+            const favoritos = action.payload
+            if (state.itens.find((f) => f.id === favoritos.id)) {
+                state.itens = state.itens.filter((f) => f.id !== favoritos.id)
             } else {
-                state.itens = [...favoritos, produto]
+                state.itens = [...state.itens, favoritos]
             }
             }
         }
